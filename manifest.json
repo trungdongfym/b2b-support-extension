@@ -1,0 +1,22 @@
+{
+    "name": "BSS B2B support extension",
+    "version": "1.0",
+    "manifest_version": 3,
+    "description": "Redirects specific script requests.",
+    "permissions": [
+        "storage",
+        "declarativeNetRequest",
+        "declarativeNetRequestWithHostAccess"
+    ],
+    "host_permissions": [
+        "*://cdn.shopify.com/*",
+        "*://*.myshopify.com/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "icon.png"
+    }
+}
