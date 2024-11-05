@@ -92,3 +92,13 @@ chrome.storage.onChanged.addListener((changes, area) => {
         updateRedirectRules();
     }
 });
+
+chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+    if (changeInfo.status === "complete" && tab.url?.includes("myshopify.com")) {
+        chrome.scripting.executeScript({
+            target: { tabId: tabId },
+            func: () =>
+                console.log("%cB2B support mode", "font-size: 20px; font-weight: bold; color: #4CAF50; padding: 5px 10px; border-radius: 5px;"),
+        });
+    }
+});

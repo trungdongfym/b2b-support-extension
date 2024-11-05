@@ -6,7 +6,8 @@
     "permissions": [
         "storage",
         "declarativeNetRequest",
-        "declarativeNetRequestWithHostAccess"
+        "declarativeNetRequestWithHostAccess",
+        "scripting"
     ],
     "host_permissions": [
         "*://cdn.shopify.com/*",
