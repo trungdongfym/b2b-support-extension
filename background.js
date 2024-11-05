@@ -9,7 +9,12 @@ function updateRedirectRules() {
     chrome.storage.sync.get("redirectDomain", (data) => {
         const domain = data.redirectDomain || "https://dev-b2b-solution-support-21.dev-bsscommerce.com";
 
-        const modules = ["cp", "qb", "dc", "td", "pl", "bogo", "ef", "on"];
+        const modules = ["cp", "qb", "dc", "td", "pl", "bogo", "ef", "on", "sr", "te"];
+        const urls = [
+            { url: `${domain}/bss-b2b-rf-js.js`, urlFilter: `https://cdn.shopify.com/extensions/*/assets/bss-b2b-rf-js.js` },
+            { url: `${domain}/bss-b2b-js.js`, urlFilter: `https://cdn.shopify.com/extensions/*/assets/bss-b2b-js.js` },
+            { url: `${domain}/bss-b2b-v3.js`, urlFilter: `https://cdn.shopify.com/extensions/*/assets/bss-b2b-v3.js` },
+        ];
 
         const mdRules = modules.map((md, index) => ({
             id: index + 1,
@@ -26,36 +31,22 @@ function updateRedirectRules() {
             },
         }));
 
-        const rules = [
-            {
-                id: 20,
+        const rules = urls.map((item, index) => {
+            return {
+                id: modules.length + index + 1,
                 priority: 1,
                 action: {
                     type: "redirect",
                     redirect: {
-                        url: `${domain}/bss-b2b-js.js`,
+                        url: item.url,
                     },
                 },
                 condition: {
-                    urlFilter: "https://cdn.shopify.com/extensions/*/assets/bss-b2b-js.js",
+                    urlFilter: item.urlFilter,
                     resourceTypes: ["script"],
                 },
-            },
-            {
-                id: 21,
-                priority: 1,
-                action: {
-                    type: "redirect",
-                    redirect: {
-                        url: `${domain}/bss-b2b-v3.js`,
-                    },
-                },
-                condition: {
-                    urlFilter: "https://cdn.shopify.com/extensions/*/assets/bss-b2b-v3.js",
-                    resourceTypes: ["script"],
-                },
-            },
-        ];
+            };
+        });
 
         rules.push(...mdRules);
 
@@ -76,7 +67,7 @@ function updateRedirectRules() {
                     }
                 }
             );
-            
+
             chrome.declarativeNetRequest.updateDynamicRules(
                 {
                     addRules: rules,
