@@ -9,7 +9,7 @@ function updateRedirectRules() {
     chrome.storage.sync.get("redirectDomain", (data) => {
         const domain = data.redirectDomain || "https://dev-b2b-solution-support-21.dev-bsscommerce.com";
 
-        const modules = ["cp", "dc", "td", "pl", "bogo", "ef", "on", "sr", "te", "qb"];
+        const modules = ["cp", "dc", "td", "pl", "bogo", "ef", "on", "sr", "te", "qb", "mc"];
         const urls = [
             { url: `${domain}/bss-b2b-rf-js.js`, urlFilter: `https://cdn.shopify.com/extensions/*/assets/bss-b2b-rf-js.js` },
             { url: `${domain}/bss-b2b-js.js`, urlFilter: `https://cdn.shopify.com/extensions/*/assets/bss-b2b-js.js` },
