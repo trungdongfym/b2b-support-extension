@@ -11,7 +11,8 @@
     ],
     "host_permissions": [
         "*://cdn.shopify.com/*",
-        "*://*.myshopify.com/*"
+        "*://*.myshopify.com/*",
+        "*://*.shopifypreview.com/*"
     ],
     "background": {
         "service_worker": "background.js"
