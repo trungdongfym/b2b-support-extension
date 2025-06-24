@@ -12,7 +12,17 @@
     "host_permissions": [
         "*://cdn.shopify.com/*",
         "*://*.myshopify.com/*",
-        "*://*.shopifypreview.com/*"
+        "*://*.shopifypreview.com/*",
+        "*://well-daily.com/*",
+        "*://mymovr.de/*",
+        "*://vendysstore.com/*",
+        "*://pinkysmicros.com/*",
+        "*://*.gpworkers.com/*",
+        "*://drinknativa.com/*",
+        "*://*.venyss.com/*",
+        "*://naturalhealthworld.co.uk/*",
+        "*://uk.ahmadtea.com/*",
+        "*://bigbenmedical.com/*"
     ],
     "background": {
         "service_worker": "background.js"
