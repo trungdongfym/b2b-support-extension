@@ -22,7 +22,13 @@
         "*://*.venyss.com/*",
         "*://naturalhealthworld.co.uk/*",
         "*://uk.ahmadtea.com/*",
-        "*://bigbenmedical.com/*"
+        "*://bigbenmedical.com/*",
+        "*://shunyatax.in/*",
+        "*://purecoco.uk/*",
+        "*://www.outpostprep.com/*",
+        "*://beta.caventura.de/*",
+        "*://www.byis2day.com/*",
+        "*://rhythmsupplement.com/*"
     ],
     "background": {
         "service_worker": "background.js"
